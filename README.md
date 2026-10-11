@@ -20,7 +20,7 @@ No build step or JavaScript dependencies are required. `.nojekyll` lets GitHub P
 ## Content to confirm before publication
 
 - Add BibTeX after the public paper and citation details are ready; omitted for now at the author's request.
-- Add a paper button when the public paper is available. The anonymous submission PDF is excluded from publication.
+- The Paper button links to the public NeurIPS page. The anonymous submission PDF is excluded from publication.
 - Confirm author affiliations and the equal-contribution note; author order follows the personal website bibliography.
 - Add a public code URL when available. No placeholder code link is shown.
 - Numerical performance highlights are deliberately omitted because the draft abstract and result tables disagree.
