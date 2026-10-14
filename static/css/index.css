@@ -79,6 +79,12 @@ figcaption { font-size: 13px; line-height: 1.65; margin: 13px auto 0; color: var
 .training-configs { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin: 24px 0; }
 .training-configs span { font-size: 12px; border: 1px solid #ddd; padding: 7px 12px; border-radius: 3px; }
 figure + .reading-width { margin-top: 25px; }
+.citation-toolbar { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 16px; margin-bottom: 12px; }
+.citation-copy { border: 0; border-radius: 4px; padding: 9px 16px; background: #363636; color: #fff; font-size: 14px; }
+.citation-copy:hover { background: #242424; }
+#citation-status { color: var(--muted); font-size: 13px; }
+.bibtex-block { margin: 0; padding: 20px; white-space: pre-wrap; overflow-wrap: anywhere; border: 1px solid var(--border); border-radius: 4px; background: #f7f7f7; font-size: 13px; line-height: 1.7; }
+.bibtex-block code { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
 footer { margin-top: 50px; padding: 32px 24px; text-align: center; background: #fafafa; color: var(--muted); font-size: 12px; }
 footer p { margin: 4px auto; max-width: 760px; }
 @media (max-width: 600px) {

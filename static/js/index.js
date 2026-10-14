@@ -19,3 +19,19 @@ document.addEventListener("keydown", (event) => {
     researchMenu.querySelector("summary").focus();
   }
 });
+
+const copyBibtex = document.querySelector("#copy-bibtex");
+const bibtexCode = document.querySelector("#bibtex-code");
+const citationStatus = document.querySelector("#citation-status");
+if (copyBibtex && bibtexCode && citationStatus) {
+  copyBibtex.hidden = false;
+  copyBibtex.addEventListener("click", async () => {
+    citationStatus.textContent = "";
+    try {
+      await navigator.clipboard.writeText(bibtexCode.textContent.trim());
+      citationStatus.textContent = "Copied to clipboard.";
+    } catch {
+      citationStatus.textContent = "Could not copy automatically. Select the citation below and copy it.";
+    }
+  });
+}

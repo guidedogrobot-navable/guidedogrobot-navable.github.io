@@ -10,16 +10,15 @@ No build step or JavaScript dependencies are required. `.nojekyll` lets GitHub P
 
 ## Content
 
-- `index.html`: authors, descriptions, dataset details, and resource links.
+- `index.html`: authors, descriptions, dataset details, resource links, and a copyable BibTeX citation.
 - `static/css/index.css`: responsive academic page styles.
-- `static/js/index.js`: reduced-motion-aware video autoplay and the research menu.
+- `static/js/index.js`: reduced-motion-aware video autoplay, the research menu, and the BibTeX Copy button.
 - `static/images/`: video poster and figures extracted from the supplied paper.
 - `static/videos/`: compressed full 30-second video and the 20–30-second teaser.
 - `static/papers/`: local research inputs, excluded from Git and deployment.
 
 ## Content to confirm before publication
 
-- Add BibTeX after the public paper and citation details are ready; omitted for now at the author's request.
 - The Paper button links to the public NeurIPS page. The anonymous submission PDF is excluded from publication.
 - Confirm author affiliations and the equal-contribution note; author order follows the personal website bibliography.
 - Add a public code URL when available. No placeholder code link is shown.
