@@ -45,7 +45,7 @@ sup { font-size: .65em; }
 .resource-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 7px; }
 .resource-button { display: inline-flex; align-items: center; gap: 8px; background: #363636; color: #fff; border-radius: 24px; padding: 8px 17px; font-size: 14px; line-height: 1.5; }
 .resource-button:hover { background: #242424; text-decoration: none; }
-.resource-button svg { height: 17px; width: 17px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.resource-icon { flex: 0 0 auto; font-size: 1.1em; line-height: 1; }
 .teaser { padding-top: 10px; }
 .teaser-caption { text-align: center; font-size: 18px; line-height: 1.6; margin: 20px auto 0; max-width: 830px; }
 .dataset-stats { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 22px 0; margin: 35px 0 0; text-align: center; }
@@ -97,7 +97,6 @@ footer p { margin: 4px auto; max-width: 760px; }
   .authors { font-size: 14px; line-height: 1.85; }
   .author-note { margin-bottom: 16px; }
   .resource-button { padding: 8px 12px; font-size: 12px; }
-  .resource-button svg { width: 15px; height: 15px; }
   .teaser-caption { font-size: 16px; }
   .dataset-stats { grid-template-columns: repeat(2, 1fr); gap: 22px 0; padding: 22px 0; margin-top: 25px; }
   .dataset-stats div:nth-child(3) { border-left: 0; }

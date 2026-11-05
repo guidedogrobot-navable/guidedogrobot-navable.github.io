@@ -13,9 +13,11 @@ No build step or JavaScript dependencies are required. `.nojekyll` lets GitHub P
 - `index.html`: authors, descriptions, dataset details, resource links, and a copyable BibTeX citation.
 - `static/css/index.css`: responsive academic page styles.
 - `static/js/index.js`: reduced-motion-aware video autoplay, the research menu, and the BibTeX Copy button.
-- `static/images/`: video poster and figures extracted from the supplied paper.
-- `static/videos/`: compressed full 30-second video and the 20–30-second teaser.
+- `static/images/`: video posters and figures extracted from the supplied paper.
+- `static/videos/`: the 2:55 NeurIPS project video (`navable-demo-neurips.mp4`), the 30-second synthetic data demo, and the ten-second teaser.
 - `static/papers/`: local research inputs, excluded from Git and deployment.
+
+The `#video` link opens the Video Overview section immediately above the abstract. The shorter synthetic demo remains at `#synthetic-demo`. Resource buttons link to the paper, video, dataset/assets, released checkpoints, and `#citation`; older `#bibtex` links still work.
 
 ## Content to confirm before publication
 
