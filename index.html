@@ -66,7 +66,22 @@
       </div>
     </header>
 
-    <section class="teaser container" aria-label="NavAble preview">
+    <section class="teaser container" id="video" aria-label="NavAble project video">
+      <video id="project-video" controls playsinline preload="none" width="1920" height="1080" poster="./static/images/navable-demo-neurips-poster.jpg" aria-label="NavAble NeurIPS 2026 project video" aria-describedby="video-description">
+        <source src="./static/videos/navable-demo-neurips.mp4" type="video/mp4">
+        Your browser does not support embedded video. <a href="./static/videos/navable-demo-neurips.mp4">Download the project video.</a>
+      </video>
+      <p class="teaser-caption" id="video-description">Explore NavAble's accessibility-focused dataset, synthetic data generation pipeline, and evaluation in our NeurIPS 2026 project video.</p>
+    </section>
+
+    <section class="section reading-width" id="abstract" aria-labelledby="abstract-title">
+      <h2 id="abstract-title">Abstract</h2>
+      <p>Reliable recognition of accessibility-critical objects, such as accessible pedestrian signals, door-activation buttons, and handrails, is essential for technologies that support independent mobility for blind and low-vision (BLV) people. Yet these objects are often missing or underrepresented in existing vision datasets, and available data offer limited diversity, inconsistent annotations, and viewpoints that do not match assistive devices.</p>
+      <p>We introduce <strong>NavAble</strong>, a large-scale dataset and synthetic data generation pipeline for BLV navigation. NavAble combines curated open-source images with newly collected, densely annotated real-world data across 11 accessibility-critical categories. Its generator transforms web images into simulation-ready 3D assets and renders them in NVIDIA Isaac Sim under varied environments, lighting, and camera viewpoints, producing RGB images with rich ground-truth annotations.</p>
+      <p>We evaluate accessibility-object segmentation across multiple model architectures and study how synthetic supervision supports real-world generalization. Evaluation on a quadruped guide dog robot and a cane-shaped mobility-assistive device further examines transfer to the egocentric viewpoints encountered during navigation.</p>
+    </section>
+
+    <section class="section container" aria-label="NavAble preview">
       <video id="teaser-video" muted loop playsinline controls preload="metadata" poster="./static/images/navable-teaser.jpg" aria-label="Ten-second montage of nine accessibility objects in simulated environments" aria-describedby="teaser-caption">
         <source src="./static/videos/navable-teaser.mp4" type="video/mp4">
         Your browser does not support embedded video. <a href="./static/videos/navable-teaser.mp4">Download the preview.</a>
@@ -78,22 +93,6 @@
         <div><dt>37</dt><dd>simulation environments</dd></div>
         <div><dt>500</dt><dd>released 3D assets</dd></div>
       </dl>
-    </section>
-
-    <section class="section container" id="video" aria-labelledby="video-title">
-      <h2 id="video-title">Video Overview</h2>
-      <p class="section-intro" id="video-description">Explore NavAble's accessibility-focused dataset, synthetic data generation pipeline, and evaluation in our NeurIPS 2026 project video.</p>
-      <video id="project-video" controls playsinline preload="none" width="1920" height="1080" poster="./static/images/navable-demo-neurips-poster.jpg" aria-label="NavAble NeurIPS 2026 project video" aria-describedby="video-description">
-        <source src="./static/videos/navable-demo-neurips.mp4" type="video/mp4">
-        Your browser does not support embedded video. <a href="./static/videos/navable-demo-neurips.mp4">Download the project video.</a>
-      </video>
-    </section>
-
-    <section class="section reading-width" id="abstract" aria-labelledby="abstract-title">
-      <h2 id="abstract-title">Abstract</h2>
-      <p>Reliable recognition of accessibility-critical objects, such as accessible pedestrian signals, door-activation buttons, and handrails, is essential for technologies that support independent mobility for blind and low-vision (BLV) people. Yet these objects are often missing or underrepresented in existing vision datasets, and available data offer limited diversity, inconsistent annotations, and viewpoints that do not match assistive devices.</p>
-      <p>We introduce <strong>NavAble</strong>, a large-scale dataset and synthetic data generation pipeline for BLV navigation. NavAble combines curated open-source images with newly collected, densely annotated real-world data across 11 accessibility-critical categories. Its generator transforms web images into simulation-ready 3D assets and renders them in NVIDIA Isaac Sim under varied environments, lighting, and camera viewpoints, producing RGB images with rich ground-truth annotations.</p>
-      <p>We evaluate accessibility-object segmentation across multiple model architectures and study how synthetic supervision supports real-world generalization. Evaluation on a quadruped guide dog robot and a cane-shaped mobility-assistive device further examines transfer to the egocentric viewpoints encountered during navigation.</p>
     </section>
 
     <section class="section reading-width" aria-labelledby="contributions-title">

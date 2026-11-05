@@ -17,7 +17,7 @@ No build step or JavaScript dependencies are required. `.nojekyll` lets GitHub P
 - `static/videos/`: the 2:55 NeurIPS project video (`navable-demo-neurips.mp4`), the 30-second synthetic data demo, and the ten-second teaser.
 - `static/papers/`: local research inputs, excluded from Git and deployment.
 
-The `#video` link opens the Video Overview section immediately above the abstract. The shorter synthetic demo remains at `#synthetic-demo`. Resource buttons link to the paper, video, dataset/assets, released checkpoints, and `#citation`; older `#bibtex` links still work.
+The `#video` link opens the project video directly below the title, authors, and resource buttons, with its caption underneath and no visible section heading. The abstract follows, then the ten-second teaser, its caption, and dataset highlights. The shorter synthetic demo remains at `#synthetic-demo`. Resource buttons link to the paper, video, dataset/assets, released checkpoints, and `#citation`; older `#bibtex` links still work.
 
 ## Content to confirm before publication
 
