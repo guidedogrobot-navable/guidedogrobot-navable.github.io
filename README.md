@@ -13,7 +13,7 @@ No build step or JavaScript dependencies are required. `.nojekyll` lets GitHub P
 - `index.html`: authors, descriptions, dataset details, resource links, and a copyable BibTeX citation.
 - `static/css/index.css`: responsive academic page styles.
 - `static/js/index.js`: reduced-motion-aware video autoplay, the research menu, and the BibTeX Copy button.
-- `static/images/`: video posters, figures extracted from the supplied paper, and the original colored SVG logo used in the title (`navable-logo-color.svg`).
+- `static/images/`: video posters, figures extracted from the supplied paper, the original colored SVG logo used in the title (`navable-logo-color.svg`), and its arrow emblem used as the favicon (`favicon.svg`).
 - `static/videos/`: the 2:55 NeurIPS project video (`navable-demo-neurips.mp4`), the 30-second synthetic data demo, and the ten-second teaser.
 - `static/papers/`: local research inputs, excluded from Git and deployment.
 
