@@ -19,13 +19,22 @@ No build step or JavaScript dependencies are required. `.nojekyll` lets GitHub P
 
 The `#video` link opens the project video directly below the title, authors, and resource buttons, with its caption underneath and no visible section heading. The abstract follows, then the ten-second teaser, its caption, and dataset highlights. The shorter synthetic demo remains at `#synthetic-demo`. Resource buttons link to the paper, video, dataset/assets, released checkpoints, and `#citation`; older `#bibtex` links still work.
 
-## Content to confirm before publication
+## Data and result sources
+
+Updated on 2026-11-06 using the supplied `NavAble_NeurIPS_2026.pdf` (42 pages, dated 2026-11-05) and the [Hugging Face dataset card](https://huggingface.co/datasets/NavAble/NeurIPS_2026_BLV/blob/0c36e45e704c29c93688a9445a0bc2d8f5ee0733/README.md).
+
+- Current release: 450,860 synthetic frames, 36,466 curated images, and 5,681 collected image records (5,581 released plus 100 supplementary revolving-door images). The released collected records represent 5,479 distinct photos; the 100-image addition remains outside the released train/validation/test splits.
+- Released collected splits: 3,703 train, 396 validation, and 1,482 test records. The supplementary 100-frame revolving-door evaluation is separate from the paper's main benchmark.
+- Retained release highlights: 11 foreground classes, 37 environments, and 500 released assets. Class 11 is `revolving_door`.
+- Performance summaries use the updated paper's 10-class foreground metrics (Tables 2, 4, and 5), not the background-inclusive averages in parts of the Hugging Face checkpoint documentation. Seven fine-tuned architectures and four data configurations produce 28 checkpoints.
+- The paper's benchmark results and the latest re-rendered synthetic release describe different data versions. The HF card also documents duplicate records and location overlap in the released metadata; the website does not assert location-disjointness for that release.
+- `static/images/robot-evaluation.png` uses the corrected four-column Figure 4, rendered from the supplied `neurips26_fig4_first_four_columns.pdf`; the repeated rightmost columns from the older website figure are removed.
+
+## Publication notes
 
 - The Paper button links to the public arXiv paper. The anonymous submission PDF is excluded from publication.
 - Confirm author affiliations and the equal-contribution note; author order follows the personal website bibliography.
 - Add a public code URL when available. No placeholder code link is shown.
-- Numerical performance highlights are deliberately omitted because the draft abstract and result tables disagree.
-- Dataset counts and the `turnstile` class name follow the public Hugging Face release; the draft uses different wording and rounded counts in places.
 
 ## Publish
 

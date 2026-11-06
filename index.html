@@ -61,7 +61,7 @@
         <a class="resource-button" href="https://arxiv.org/abs/2610.19330"><span class="resource-icon" aria-hidden="true">📄</span>Paper</a>
         <a class="resource-button" href="#video"><span class="resource-icon" aria-hidden="true">🎬</span>Video</a>
         <a class="resource-button" href="https://huggingface.co/datasets/NavAble/NeurIPS_2026_BLV"><span class="resource-icon" aria-hidden="true">🤗</span>Dataset &amp; 3D Assets</a>
-        <a class="resource-button" href="https://huggingface.co/datasets/NavAble/NeurIPS_2026_BLV#use-the-released-checkpoints"><span class="resource-icon" aria-hidden="true">📦</span>Checkpoints</a>
+        <a class="resource-button" href="https://huggingface.co/datasets/NavAble/NeurIPS_2026_BLV/tree/main/checkpoints"><span class="resource-icon" aria-hidden="true">📦</span>Checkpoints</a>
         <a class="resource-button" href="#citation"><span class="resource-icon" aria-hidden="true">📝</span>BibTeX</a>
       </div>
     </header>
@@ -77,8 +77,8 @@
     <section class="section reading-width" id="abstract" aria-labelledby="abstract-title">
       <h2 id="abstract-title">Abstract</h2>
       <p>Reliable recognition of accessibility-critical objects, such as accessible pedestrian signals, door-activation buttons, and handrails, is essential for technologies that support independent mobility for blind and low-vision (BLV) people. Yet these objects are often missing or underrepresented in existing vision datasets, and available data offer limited diversity, inconsistent annotations, and viewpoints that do not match assistive devices.</p>
-      <p>We introduce <strong>NavAble</strong>, a large-scale dataset and synthetic data generation pipeline for BLV navigation. NavAble combines curated open-source images with newly collected, densely annotated real-world data across 11 accessibility-critical categories. Its generator transforms web images into simulation-ready 3D assets and renders them in NVIDIA Isaac Sim under varied environments, lighting, and camera viewpoints, producing RGB images with rich ground-truth annotations.</p>
-      <p>We evaluate accessibility-object segmentation across multiple model architectures and study how synthetic supervision supports real-world generalization. Evaluation on a quadruped guide dog robot and a cane-shaped mobility-assistive device further examines transfer to the egocentric viewpoints encountered during navigation.</p>
+      <p>We introduce <strong>NavAble</strong>, a large-scale dataset and synthetic data generation pipeline for BLV navigation. NavAble combines 36,466 curated images with 5,681 collected image records, including 100 supplementary revolving-door frames, across 11 accessibility-critical categories. Its generator transforms web images into simulation-ready 3D assets and renders them in NVIDIA Isaac Sim. The current synthetic release contains 450,860 frames across 37 environments, with semantic segmentation, depth, surface normals, and 2D/3D bounding boxes.</p>
+      <p>Experiments across seven segmentation architectures reach 71.70% foreground mIoU on the paper's real-world benchmark. Adding synthetic data to real-only training improves five of the seven architectures by up to 7.19 mIoU points. Evaluation on a quadruped guide dog robot and a cane-shaped mobility-assistive device shows relative transfer gains on their egocentric viewpoints, while absolute accuracy remains insufficient for autonomous deployment.</p>
     </section>
 
     <section class="section container" aria-label="NavAble preview">
@@ -89,7 +89,7 @@
       <p id="teaser-caption" class="teaser-caption"><strong>Perceiving the objects that make navigation accessible.</strong><br>NavAble brings together real-world data and controllable synthetic generation for blind and low-vision navigation.</p>
       <dl class="dataset-stats" aria-label="Dataset highlights">
         <div><dt>11</dt><dd>accessibility object classes</dd></div>
-        <div><dt>452K+</dt><dd>synthetic frames</dd></div>
+        <div><dt>450.9K</dt><dd>synthetic frames</dd></div>
         <div><dt>37</dt><dd>simulation environments</dd></div>
         <div><dt>500</dt><dd>released 3D assets</dd></div>
       </dl>
@@ -109,19 +109,20 @@
       <p class="section-intro">Three complementary data sources expand coverage of the objects that support everyday mobility decisions.</p>
       <div class="table-scroll" tabindex="0" role="region" aria-label="Dataset components table">
         <table>
-          <thead><tr><th scope="col">Component</th><th scope="col">Images</th><th scope="col">Role</th></tr></thead>
+          <thead><tr><th scope="col">Component</th><th scope="col">Count</th><th scope="col">Role</th></tr></thead>
           <tbody>
-            <tr><th scope="row">Curated real-world data</th><td>36,466</td><td>Existing sources remapped to a shared class taxonomy.</td></tr>
-            <tr><th scope="row">Newly collected real-world data</th><td>5,581</td><td>Dense annotations from indoor and outdoor navigation settings.</td></tr>
-            <tr><th scope="row">Synthetic data</th><td>452,704</td><td>Controllable appearance, lighting, environments, and viewpoints.</td></tr>
+            <tr><th scope="row">Curated real-world data</th><td>36,466 images</td><td>Existing sources remapped to a shared class taxonomy.</td></tr>
+            <tr><th scope="row">Newly collected real-world data</th><td>5,681 records</td><td>5,581 released records plus 100 supplementary revolving-door images.</td></tr>
+            <tr><th scope="row">Synthetic data</th><td>450,860 frames</td><td>Controllable appearance, lighting, environments, and viewpoints.</td></tr>
           </tbody>
         </table>
       </div>
-      <p class="source-note">Counts reflect the <a href="https://huggingface.co/datasets/NavAble/NeurIPS_2026_BLV#splits--sizes">public dataset release</a>. The collected real-world test split contains 1,482 images.</p>
+      <p class="source-note">Counts follow the <a href="https://huggingface.co/datasets/NavAble/NeurIPS_2026_BLV#at-a-glance">current Hugging Face release</a>. The 5,581 released collected records are split into 3,703 train, 396 validation, and 1,482 test records. The 100 supplementary revolving-door images are separate from these splits and await split assignment in the release.</p>
+      <p class="source-note">The <a href="https://huggingface.co/datasets/NavAble/NeurIPS_2026_BLV#images-containing-each-class">released-mask audit</a> identifies 5,479 distinct photos within those 5,581 records. Per-class counts reflect images containing a class; classes can overlap, so their counts should not be summed to obtain the dataset size.</p>
       <div class="taxonomy" aria-label="Object classes">
-        <span>APS button</span><span>Bus stop</span><span>Bus stop sign</span><span>Crosswalk</span><span>Door button</span><span>Elevator</span><span>Elevator button</span><span>Escalator</span><span>Handrail</span><span>Pedestrian signal</span><span>Turnstile</span>
+        <span>APS button</span><span>Bus stop</span><span>Bus stop sign</span><span>Crosswalk</span><span>Door button</span><span>Elevator</span><span>Elevator button</span><span>Escalator</span><span>Handrail</span><span>Pedestrian signal</span><span>Revolving door</span>
       </div>
-      <p class="class-note">APS: accessible pedestrian signal. Turnstile is synthetic-only in the current release; real-world evaluation uses the 10 shared classes.</p>
+      <p class="class-note">APS: accessible pedestrian signal. The main benchmark evaluates 10 foreground classes; revolving door is evaluated separately on the 100 supplementary frames (paper, Appendix H).</p>
       <figure class="curation-figure">
         <a class="figure-link" href="./static/images/data-curation.png" target="_blank" rel="noopener" aria-label="Open the data curation figure at full size">
           <img src="./static/images/data-curation.png" width="572" height="709" loading="lazy" alt="Examples of inconsistent annotations and noisy open-source images alongside curated and newly collected images with dense, consistent masks.">
@@ -159,23 +160,24 @@
 
     <section class="section reading-width" aria-labelledby="evaluation-title">
       <h2 id="evaluation-title">Segmentation Evaluation</h2>
-      <p>We benchmark SAN, Mask2Former, SegFormer, DeepLabv3+, and EncNet on a held-out real-world test set. Four training configurations separate the effects of newly collected data, curated data, and synthetic supervision.</p>
+      <p>We benchmark seven segmentation architectures: SegMAN, Mask2Former, SAM 3, SAN, SegFormer, EncNet, and DeepLabv3+. Four training configurations separate the effects of collected data, curated data, and synthetic supervision, with 28 trained checkpoints released. The paper's main benchmark uses 1,482 real-world test images and reports foreground mIoU over 10 classes, excluding background and revolving door.</p>
       <div class="training-configs" aria-label="Training configurations"><span>Real</span><span>Real + Curated</span><span>Real + Synthetic</span><span>Real + Curated + Synthetic</span></div>
-      <p>The results show architecture-dependent effects: synthetic augmentation improves the evaluated transformer and mask-classification models, while the CNN baselines do not improve over their real-only baselines. This comparison helps identify where synthetic diversity is useful and where domain differences remain challenging.</p>
+      <p>SegMAN with real, curated, and synthetic data reaches <strong>71.70% foreground mIoU</strong>, compared with 26.07% for the strongest evaluated zero-shot baseline, CAT-Seg. Adding synthetic data to real-only training improves <strong>five of seven architectures</strong>, with a maximum gain of <strong>7.19 mIoU points</strong> for SegMAN. EncNet also improves (+2.34 points); DeepLabv3+ and SAM 3 perform best on real-only training. Combining curated and synthetic data yields SegMAN's largest gain over real-only training: +9.50 points.</p>
+      <p class="source-note">Results follow Tables 2 and 4 of the <a href="https://arxiv.org/abs/2610.19330">paper</a>, using its training data and benchmark masks. Foreground mIoU excludes background; background-inclusive averages in the checkpoint documentation use a different denominator. Dataset counts above describe the current release.</p>
     </section>
 
     <section class="section container" aria-labelledby="embodied-title">
       <h2 id="embodied-title">Transfer to Assistive Robots</h2>
-      <p class="section-intro">From dataset evaluation to the viewpoints of a quadruped guide dog robot and a cane-shaped mobility-assistive device.</p>
+      <p class="section-intro">Offline evaluation on egocentric footage from Glide (157 images, 5 labelled classes) and a quadruped guide dog robot (155 images, 9 labelled classes).</p>
       <figure>
-        <a class="figure-link" href="./static/images/robot-evaluation.png" target="_blank" rel="noopener" aria-label="Open the assistive-robot evaluation figure at full size">
-          <img src="./static/images/robot-evaluation.png" width="1208" height="510" loading="lazy" alt="Cane-shaped and quadruped assistive platforms, with ground-truth masks and SegFormer predictions comparing training on real data only against real plus synthetic data in navigation scenes.">
+        <a class="figure-link" href="./static/images/robot-evaluation.png?v=paper-20261106" target="_blank" rel="noopener" aria-label="Open the assistive-robot evaluation figure at full size">
+          <img src="./static/images/robot-evaluation.png?v=paper-20261106" width="1800" height="1119" loading="lazy" alt="Cane-shaped and quadruped assistive platforms, input camera frames, and SegFormer predictions comparing real-only training with real plus synthetic data.">
         </a>
-        <figcaption>Qualitative evaluation on egocentric footage from two mobility-assistive platforms. Each comparison pairs real-only training with real plus synthetic supervision.</figcaption>
+        <figcaption>Figure 4 from the updated paper: the platform, input frame, real-only prediction, and real-plus-synthetic prediction. The top two rows show Glide; the bottom two show the quadruped.</figcaption>
       </figure>
       <div class="reading-width within-container">
-        <p>Using SegFormer on both platforms, we evaluate whether improvements transfer to previously unseen device viewpoints. Synthetic supervision improves mean IoU and precision on both embodiment splits, with benefits for navigation-relevant objects such as pedestrian signals, APS buttons, and handrails.</p>
-        <p>These experiments evaluate perception transfer. Reliable closed-loop navigation remains an open direction, alongside broader class coverage and more geographically diverse real-world data.</p>
+        <p>Adding synthetic supervision to SegFormer improves foreground mIoU from <strong>11.94% to 16.17%</strong> on Glide (+4.23 points) and from <strong>21.56% to 23.08%</strong> on the quadruped (+1.52 points), as reported in Table 5 of the paper. Mean precision also improves on both platforms.</p>
+        <p>These are relative transfer gains. Absolute accuracy of 16.17%–23.08% foreground mIoU does not establish readiness for autonomous assistive navigation; broader class coverage, geographic diversity, and reliable closed-loop navigation remain open directions.</p>
       </div>
     </section>
 
